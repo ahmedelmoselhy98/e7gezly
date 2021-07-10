@@ -142,7 +142,7 @@ class StudentHomePage extends StatelessWidget {
                 width: 100,
                 child: ListTile(
                     title: Image.network(
-                      'https://images.idgesg.net/images/article/2018/10/ai_artificial-intelligence_circuit-board_circuitry_mother-board_nodes_computer-chips-100777423-large.jpg',
+                      'https://images.idgesg.net/images/article/2018/10/ai0_artificial-intelligence_circuit-board_circuitry_mother-board_nodes_computer-chips-100777423-large.jpg',
                       fit: BoxFit.fill,
                       height: 60,
                       width: 50,
