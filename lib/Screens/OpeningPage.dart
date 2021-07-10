@@ -1,7 +1,8 @@
-import 'package:e7gzly/Screens/AdminScreens/adminsignupscreen.dart';
-import 'package:e7gzly/Screens/CenterScreen/centresignupscreen.dart';
-import 'package:e7gzly/Screens/StudentScreens/studentsignupscreen.dart';
+import 'package:e7gzly/Screens/CenterScreen/centreloginscreen.dart';
+import 'package:e7gzly/Screens/StudentScreens/studentloginscreen.dart';
 import 'package:flutter/material.dart';
+
+import 'AdminScreens/adminloginscreen.dart';
 
 class Choose extends StatelessWidget {
   static String id = 'Choose';
@@ -34,7 +35,7 @@ class Choose extends StatelessWidget {
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
             color: Colors.white,
             onPressed: () {
-              Navigator.pushNamed(context, AdminSignUpScreen.id);
+              Navigator.pushNamed(context, AdminLoginScreen.id);
             },
             child: Text('Admin'),
           ),
@@ -72,7 +73,7 @@ class Choose extends StatelessWidget {
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
             color: Colors.white,
             onPressed: () {
-              Navigator.pushNamed(context, StudentSignUpScreen.id);
+              Navigator.pushNamed(context, StudentLoginScreen.id);
             },
             child: Text('User/Student'),
           ),
@@ -110,7 +111,7 @@ class Choose extends StatelessWidget {
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
             color: Colors.white,
             onPressed: () {
-              Navigator.pushNamed(context, CentreSignUpScreen.id);
+              Navigator.pushNamed(context, CentreLoginScreen.id);
             },
             child: Text('CourseCentre'),
           ),

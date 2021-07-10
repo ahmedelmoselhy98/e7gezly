@@ -1,8 +1,10 @@
 import 'package:e7gzly/Components/CourseWidget.dart';
+import 'package:e7gzly/Screens/StudentScreens/MyBookingCourses.dart';
 import 'package:flutter/material.dart';
 
 class CourseDetailsWidget extends CourseWidget {
   static String id = 'CourseDetailsWidget';
+  final image;
   final name;
   final date;
   final Duration;
@@ -11,6 +13,7 @@ class CourseDetailsWidget extends CourseWidget {
 
   const CourseDetailsWidget(
       {Key key,
+      this.image,
       this.name,
       this.date,
       this.Duration,
@@ -18,8 +21,16 @@ class CourseDetailsWidget extends CourseWidget {
       this.InstructorName})
       : super(key: key);
 
+
+
   @override
   Widget build(BuildContext context) {
+    Map data  = ModalRoute.of(context).settings.arguments as Map;
+    print(data['data']);
+
+    print('ahmed: ');
+    print(data['data']['Course name']);
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Course Details'),
@@ -31,8 +42,8 @@ class CourseDetailsWidget extends CourseWidget {
             height: 200,
             child: Card(
               child: Expanded(
-                child: Image.asset(
-                  'images/course/Googleflutterlogo.png',
+                child: Image.network(
+                  data['data']['Course image'],
                   fit: BoxFit.fill,
                 ),
               ),
@@ -42,7 +53,7 @@ class CourseDetailsWidget extends CourseWidget {
             width: MediaQuery.of(context).size.width,
             child: ListTile(
               title: Text(
-                'Flutter From A to Z Flutter & Dart - The Complete Guide ',
+                data['data']['Course name'],
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 23,
@@ -65,7 +76,7 @@ class CourseDetailsWidget extends CourseWidget {
                       style: TextStyle(fontSize: 20, color: Colors.black),
                     ),
                     TextSpan(
-                      text: '12/9/2021',
+                      text: data['data']['Begins Date'],
                       style: TextStyle(
                         fontSize: 23,
                         color: Colors.blue,
@@ -89,7 +100,7 @@ class CourseDetailsWidget extends CourseWidget {
                       style: TextStyle(fontSize: 20, color: Colors.black),
                     ),
                     TextSpan(
-                      text: '40 Hours',
+                      text: data['data']['Duration'],
                       style: TextStyle(
                         fontSize: 23,
                         color: Colors.blue,
@@ -113,7 +124,7 @@ class CourseDetailsWidget extends CourseWidget {
                       style: TextStyle(fontSize: 20, color: Colors.black),
                     ),
                     TextSpan(
-                      text: '3000 LE',
+                      text: data['data']['Price'],
                       style: TextStyle(
                         fontSize: 23,
                         color: Colors.blue,
@@ -128,7 +139,9 @@ class CourseDetailsWidget extends CourseWidget {
             child: Card(
               color: Colors.blue,
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, MyBookingCourses.id);
+                },
                 child: Text(
                   'Book Now',
                   style: TextStyle(color: Colors.white),
@@ -144,7 +157,7 @@ class CourseDetailsWidget extends CourseWidget {
               ' Instructor Name :',
               style: TextStyle(fontWeight: FontWeight.w400, fontSize: 20),
             ),
-            subtitle: Text('Maximilian Schwarzmüller'),
+            subtitle: Text(data['data']['Instructor name']),
           ),
         ],
       ),

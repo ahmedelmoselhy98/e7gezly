@@ -2,11 +2,9 @@ import 'package:e7gzly/Screens/AdminScreens/AdminHomePage.dart';
 import 'package:e7gzly/Screens/AdminScreens/adminloginscreen.dart';
 import 'package:e7gzly/widgets/CustomTextField.dart';
 import 'package:flutter/material.dart';
-
 class AdminSignUpScreen extends StatelessWidget {
   final GlobalKey<FormState> _globalKey = GlobalKey<FormState>();
   static String id = 'AdminSignUpScreen';
-
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;

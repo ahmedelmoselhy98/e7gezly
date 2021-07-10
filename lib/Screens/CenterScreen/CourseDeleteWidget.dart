@@ -1,16 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class CourseWidget extends StatelessWidget {
+class CourseDeleteWidget extends StatelessWidget {
   final image;
   final Name;
   final Instructor;
   final BeginsDate;
   final Duration;
   final Price;
-
-  const CourseWidget(
+  final Function delete;
+  const CourseDeleteWidget(
       {Key key,
+      this.delete,
       this.image,
       this.Name,
       this.Instructor,
@@ -18,7 +19,6 @@ class CourseWidget extends StatelessWidget {
       this.Duration,
       this.Price})
       : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -89,18 +89,34 @@ class CourseWidget extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              Expanded(
-                                child: Container(
-                                  alignment: Alignment.topLeft,
-                                  child: Text(
-                                    'Price: $Price',
-                                    style: TextStyle(
-                                      fontSize: 20,
+                              Row(
+                                children: [
+                                  Expanded(
+                                    child: Container(
+                                      alignment: Alignment.topLeft,
+                                      child: Text(
+                                        'Price: $Price',
+                                        style: TextStyle(
+                                          fontSize: 20,
+                                        ),
+                                      ),
                                     ),
                                   ),
-                                ),
+                                ],
                               ),
                             ]))),
+                    Center(
+                      child: GestureDetector(
+                        onTap: () {
+                          delete();
+                        },
+                        child: Icon(
+                          Icons.delete_forever,
+                          color: Colors.red,
+                          size: 45,
+                        ),
+                      ),
+                    ),
                   ],
                 )),
           ),

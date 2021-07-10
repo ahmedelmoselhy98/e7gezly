@@ -1,9 +1,8 @@
+import 'package:e7gzly/Screens/CenterScreen/CenterHomePage.dart';
 import 'package:e7gzly/widgets/CustomTextField.dart';
 import 'package:flutter/material.dart';
-
 class AddCourse extends StatelessWidget {
   static String id = 'AddCourse';
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,7 +62,11 @@ class AddCourse extends StatelessWidget {
                 height: 30,
               ),
               RaisedButton(
-                onPressed: () {},
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20)),
+                onPressed: () {
+                  Navigator.pushNamed(context, CentreHomePage.id);
+                },
                 color: Colors.white,
                 child: Text('Add Course'),
               ),

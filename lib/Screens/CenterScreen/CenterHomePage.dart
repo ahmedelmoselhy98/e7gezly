@@ -1,7 +1,6 @@
 import 'package:e7gzly/Screens/CenterScreen/CentreCourses.dart';
 import 'package:e7gzly/Screens/CenterScreen/ManageCourses.dart';
 import 'package:flutter/material.dart';
-
 class CentreHomePage extends StatelessWidget {
   static String id = 'CentreHomePage';
   @override

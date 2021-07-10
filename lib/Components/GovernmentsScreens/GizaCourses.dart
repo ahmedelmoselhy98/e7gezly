@@ -4,32 +4,36 @@ import 'package:flutter/material.dart';
 class GizaCourses extends StatelessWidget {
   var courselist = [
     {
-      'Course name': 'flutter A To Z',
+      'Course image': 'https://media.geeksforgeeks.org/wp-content/cdn-uploads/20210215184506/Flutter-Tutorial.png',
+      'Course name': 'Build Native Mobile Apps with Flutter',
       'Instructor name': 'Max maxfdfd',
-      'Begins Date': '12.12.2021',
+      'Begins Date': '22.9.2021',
       'Duration': '60 Hour ',
       'Price': '3000 LE ',
     },
     {
-      'Course name': 'php A To Z',
-      'Instructor name': 'Angila maxfdfd',
-      'Begins Date': '12.12.2021',
-      'Duration': '70 Hour ',
-      'Price': '5000 LE ',
+      'Course image': 'https://gfx4arab.com/wp-content/uploads/2019/07/maxresdefault.jpg',
+      'Course name': 'Adobe Photoshop CC – Essentials Training Course',
+      'Instructor name': 'James arnold',
+      'Begins Date': '13.11.2021',
+      'Duration': '30 Hour ',
+      'Price': '2500 LE ',
     },
     {
-      'Course name': 'php A To Z',
-      'Instructor name': 'Angila maxfdfd',
-      'Begins Date': '12.12.2021',
-      'Duration': '70 Hour ',
-      'Price': '5000 LE ',
+      'Course image': 'https://cnoffers.github.io/assets/blog/android-cover.jpg',
+      'Course name': 'Android Java Masterclass - Become an App Developer',
+      'Instructor name': 'Andre gomes',
+      'Begins Date': '25.10.2021',
+      'Duration': '90 Hour ',
+      'Price': '6000 LE ',
     },
     {
-      'Course name': 'flutter A To Z',
-      'Instructor name': 'Max maxfdfd',
-      'Begins Date': '12.12.2021',
-      'Duration': '60 Hour ',
-      'Price': '3000 LE ',
+      'Course image': 'https://www.tutorialspoint.com/ios/images/ios.jpg',
+      'Course name': 'iOS & Swift - The Complete iOS App Development Bootcamp',
+      'Instructor name': 'Cristian adam',
+      'Begins Date': '10.8.2021',
+      'Duration': '100 Hour ',
+      'Price': '7000 LE ',
     },
   ];
 
@@ -37,7 +41,7 @@ class GizaCourses extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text('Giza Courses'),
         centerTitle: true,
@@ -46,6 +50,7 @@ class GizaCourses extends StatelessWidget {
         itemCount: courselist.length,
         itemBuilder: (context, i) {
           return CourseWidget(
+            image: courselist[i]['Course image'],
             Name: courselist[i]['Course name'],
             Instructor: courselist[i]['Instructor name'],
             BeginsDate: courselist[i]['Begins Date'],

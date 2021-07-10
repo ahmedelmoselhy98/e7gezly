@@ -3,11 +3,12 @@ import 'package:e7gzly/widgets/CustomTextField.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:e7gzly/Screens/CenterScreen/centresignupscreen.dart';
-
 class CentreLoginScreen extends StatelessWidget {
   final GlobalKey<FormState> _globalKey = GlobalKey<FormState>();
   static String id = 'LoginScreen';
   bool IsCourseCenter = false;
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -35,13 +36,16 @@ class CentreLoginScreen extends StatelessWidget {
               height: height * .1,
             ),
             CustomTextField(
+              controller: emailController,
               hint: 'Enter Centre email',
               icon: Icons.mail,
             ),
             SizedBox(
               height: height * .02,
             ),
-            CustomTextField(hint: 'Enter your password', icon: Icons.lock),
+            CustomTextField(
+                controller: passwordController,
+                hint: 'Enter your password', icon: Icons.lock),
             SizedBox(
               height: height * .05,
             ),
@@ -52,7 +56,13 @@ class CentreLoginScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20)),
                   onPressed: () {
                     if (_globalKey.currentState.validate()) {
-                      Navigator.pushNamed(context, CentreHomePage.id);
+                      if (emailController.text == "center@e7gzly.com" &&
+                          passwordController.text == "123456") {
+                        Navigator.pushNamed(context, CentreHomePage.id);
+                      } else {
+                        final snackBar = SnackBar(content: Text('Email or password is incorrect'),);
+                        ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                      }
                     }
                   },
                   color: Colors.white,

@@ -1,10 +1,8 @@
 import 'package:e7gzly/Screens/CenterScreen/CentreCourses.dart';
 import 'package:e7gzly/Screens/CenterScreen/ManageCourses.dart';
 import 'package:flutter/material.dart';
-
 class AdminHomePage extends StatelessWidget {
   static String id = 'AdminHomePage';
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -4,30 +4,10 @@ import 'package:flutter/material.dart';
 class SuezCourses extends StatelessWidget {
   var courselist = [
     {
-      'Course name': 'flutter A To Z',
+      'Course image': 'https://media.geeksforgeeks.org/wp-content/cdn-uploads/20210215184506/Flutter-Tutorial.png',
+      'Course name': 'Build Native Mobile Apps with Flutter',
       'Instructor name': 'Max maxfdfd',
-      'Begins Date': '12.12.2021',
-      'Duration': '60 Hour ',
-      'Price': '3000 LE ',
-    },
-    {
-      'Course name': 'php A To Z',
-      'Instructor name': 'Angila maxfdfd',
-      'Begins Date': '12.12.2021',
-      'Duration': '70 Hour ',
-      'Price': '5000 LE ',
-    },
-    {
-      'Course name': 'php A To Z',
-      'Instructor name': 'Angila maxfdfd',
-      'Begins Date': '12.12.2021',
-      'Duration': '70 Hour ',
-      'Price': '5000 LE ',
-    },
-    {
-      'Course name': 'flutter A To Z',
-      'Instructor name': 'Max maxfdfd',
-      'Begins Date': '12.12.2021',
+      'Begins Date': '22.9.2021',
       'Duration': '60 Hour ',
       'Price': '3000 LE ',
     },
@@ -37,7 +17,7 @@ class SuezCourses extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text('Suez Courses'),
         centerTitle: true,
@@ -46,6 +26,7 @@ class SuezCourses extends StatelessWidget {
         itemCount: courselist.length,
         itemBuilder: (context, i) {
           return CourseWidget(
+            image: courselist[i]['Course image'],
             Name: courselist[i]['Course name'],
             Instructor: courselist[i]['Instructor name'],
             BeginsDate: courselist[i]['Begins Date'],

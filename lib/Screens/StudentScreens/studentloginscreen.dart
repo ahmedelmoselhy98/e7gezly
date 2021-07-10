@@ -7,7 +7,12 @@ import 'package:e7gzly/Screens/StudentScreens/studentsignupscreen.dart';
 class StudentLoginScreen extends StatelessWidget {
   final GlobalKey<FormState> _globalKey = GlobalKey<FormState>();
   static String id = 'StudentLoginScreen';
+
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
   bool IsCourseCenter = false;
+
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -35,13 +40,17 @@ class StudentLoginScreen extends StatelessWidget {
               height: height * .1,
             ),
             CustomTextField(
+              controller: emailController,
               hint: 'Enter Your email',
               icon: Icons.mail,
             ),
             SizedBox(
               height: height * .02,
             ),
-            CustomTextField(hint: 'Enter your password', icon: Icons.lock),
+            CustomTextField(
+                controller: passwordController,
+                hint: 'Enter your password',
+                icon: Icons.lock),
             SizedBox(
               height: height * .05,
             ),
@@ -52,7 +61,15 @@ class StudentLoginScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20)),
                   onPressed: () {
                     if (_globalKey.currentState.validate()) {
-                      Navigator.pushNamed(context, StudentHomePage.id);
+                      if (emailController.text == "student@e7gzly.com" &&
+                          passwordController.text == "123456") {
+                        Navigator.pushNamed(context, StudentHomePage.id);
+                      } else {
+                        final snackBar = SnackBar(
+                          content: Text('Email or password is incorrect'),
+                        );
+                        ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                      }
                     }
                   },
                   color: Colors.white,

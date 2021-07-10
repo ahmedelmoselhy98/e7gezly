@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 class CustomTextField extends StatelessWidget {
   final String hint;
   final IconData icon;
+  final TextEditingController controller;
+
+
   String _errorMessage(String str) {
     switch (hint) {
       case 'Enter your name':
@@ -28,13 +31,14 @@ class CustomTextField extends StatelessWidget {
     }
   }
 
-  const CustomTextField({@required this.hint, @required this.icon});
+  const CustomTextField({@required this.hint, @required this.icon,@required this.controller});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: TextFormField(
+        controller: controller,
         validator: (value) {
           if (value.isEmpty) {
             return _errorMessage(hint);

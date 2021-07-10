@@ -1,13 +1,12 @@
 import 'package:e7gzly/Components/studentdrawer.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 class Categories extends StatelessWidget {
   static String id = 'Categories';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text('Categories'),
         centerTitle: true,

@@ -6,12 +6,11 @@ import 'package:e7gzly/Screens/CenterScreen/centreloginscreen.dart';
 class CentreSignUpScreen extends StatelessWidget {
   final GlobalKey<FormState> _globalKey = GlobalKey<FormState>();
   static String id = 'SignUpScreen';
-
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: Colors.blue,
+      backgroundColor: Colors.white,
       body: Form(
         key: _globalKey,
         child: ListView(
