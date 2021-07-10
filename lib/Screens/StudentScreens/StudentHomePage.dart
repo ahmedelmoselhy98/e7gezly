@@ -147,6 +147,7 @@ class StudentHomePage extends StatelessWidget {
                       height: 60,
                       width: 50,
                     ),
+
                     subtitle: Text(
                       'Artificial Intelligence',
                       textAlign: TextAlign.center,
